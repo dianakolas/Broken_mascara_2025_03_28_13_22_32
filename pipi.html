@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-outline@%5E1.1.0/build/aframe-outline.min.js"></script>
+    <script src="sketch3.js"></script>
+    <script src="p5.min.js"></script>
+  </head>
+  <body>
+  
+   <div class="sketch-div" id="sketch-div"></div>
+
+   
+
+
+   <div id="myEmbeddedScene">
+    <a-scene embedded="">
+      
+      <a-entity gltf-model="url(./low_poly_dead_body_covered_game_ready.glb)" position="0 1 -7"></a-entity>
+      <a-entity camera look-controls wasd-controls="acceleration:50; pointerLockEnabled: true" position="0 2 -4"></a-entity>
+      <a-light color="white" position="-1 1 0" intensity="5"></a-light>
+
+<!-- Blue point light, 5 meters in the air. -->
+<a-light type="point" color="blue" position="0 5 0" intensity="5"></a-light>
+    </a-scene>
+  </div>
+  </a-scene>
+
+  </body>
+</html>
