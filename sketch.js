@@ -1,3 +1,4 @@
+let scene = 1;
 let offset = 0;
 function windowResized() {
   let width = document.querySelector("#sketch-div").clientWidth;
@@ -21,6 +22,22 @@ function setup() {
 
 
 function draw() {
+ if (frameCount % 50==0){
+if (scene < 2){
+  scene++;
+} else {
+  scene = 1;
+}
+ }
+ if (scene ==1) { 
+scene1();
+ }
+ if (scene== 2){
+  scene2();
+ }
+}
+function scene1(){
+
   background(255);
   stroke(0);
   
@@ -43,5 +60,19 @@ function draw() {
     }
     endShape();
   }
+
+
+
+
 }
 
+function scene2() {
+  background(220);
+  
+  for (let x = 0; x < width; x += 20) {
+    let offset = sin(frameCount * 0.05 + x * 0.1) * 20; 
+    let weight = map(sin(frameCount * 0.05 + x * 0.1), -1, 1, 1, 5); // 
+    strokeWeight(weight);
+    line(x + offset, 0, x + offset, height);
+  }
+}
